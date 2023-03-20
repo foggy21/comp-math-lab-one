@@ -1,7 +1,7 @@
 from function import func
 from numpy import linspace
 from errors import *
-import csv
+from csv import writer
 # function x^2 + ln(x);
 # [a; b] = [0,4; 0,9]
 # x* = 0,52
@@ -16,7 +16,7 @@ x_stars =[0.52, 0.42, 0.87, 0.67]
 header = ["n", "Aerror", "Rerror", "Terror"]
 
 with open('laba.csv', 'w') as file:
-    writer = csv.writer(file, delimiter=";", lineterminator='\n')
+    writer = writer(file, delimiter=";", lineterminator='\n')
     for x_star in x_stars:
         writer.writerow(header)
         for n in nodes:
