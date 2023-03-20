@@ -6,7 +6,7 @@ def multiplication(node, values_x, x_star, i):
     return result
 
 # Patrick Bateman sigma...
-def sigmaSum(node, values_y, values_x, x_star):
+def sigmaSum(node, values_x, values_y, x_star):
     result = 0
     for i in range(node):
         result += values_y[i] * multiplication(node, values_x, x_star, i)
