@@ -16,9 +16,9 @@ x_stars =[0.52, 0.42, 0.87, 0.67]
 header = ["n", "Aerror", "Rerror", "Terror"]
 
 with open('laba.csv', 'w') as file:
-    writer = writer(file, delimiter=";", lineterminator='\n')
+    _writer = writer(file, delimiter=";", lineterminator='\n')
     for x_star in x_stars:
-        writer.writerow(header)
+        _writer.writerow(header)
         for n in nodes:
             values_x = linspace(a, b, num=n)
             values_y = [func(y) for y in values_x]
@@ -26,5 +26,5 @@ with open('laba.csv', 'w') as file:
             relativeError = calculateRelativeError(absoluteError, x_star)
             theoryError = calculateTheoryError(n, x_star, a, b)
             data = [n, absoluteError, relativeError, theoryError]
-            writer.writerow(data)
+            _writer.writerow(data)
 
